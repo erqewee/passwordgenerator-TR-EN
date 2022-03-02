@@ -4,7 +4,7 @@
 
 # Gerekli
 
-- Python: Sürüm 3.7 veya üstü (önerilen 3.10.2)
+- [Python](https://www.python.org/downloads): Sürüm 3.7 veya üstü (önerilen 3.10.2)
 
 # Nasıl Kullanılır?
 

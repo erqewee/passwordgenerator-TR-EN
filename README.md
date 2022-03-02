@@ -17,5 +17,5 @@
 
 # İletişim
 
-- [! ! EreniXq#7788](https://www.discord.com/users/744835491643260988)
+- [! EreniXq#7788](https://www.discord.com/users/744835491643260988)
 - [Sunucu](https://discord.gg/uF8TZY4MaR)

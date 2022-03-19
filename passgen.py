@@ -1,16 +1,22 @@
-from random import sample
-from string import ascii_letters, ascii_lowercase, ascii_uppercase, punctuation, digits
-from datetime import datetime
+from random import *
+from string import *
+from datetime import *
 
 All = (ascii_letters + ascii_lowercase + ascii_uppercase + punctuation + digits)
+fileName = "lastCreatedPassword-log.js"
+file = open(fileName, "w", encoding = "utf-8")
+
+fileName2 = "allCreatedPassword-logs.txt"
+file2 = open(fileName2, "a", encoding = "utf-8")
 
 userName = input("Adınızı Giriniz: ")
+desc = input("Bu şifreyi ne için kullanacaksınız: ")
 
 if(userName == ""):
  userName += "Belirtilmedi!"
  
 val = int(input("""
-=> İşlem Türünü seçiniz! 
++ İşlem Türünü seçiniz! 
 
 |---------------------|
 | 1 - Oluşturana ekle |
@@ -24,20 +30,14 @@ val = int(input("""
 
 > İşleminiz: """))
 
-fileName = "lastCreatedPassword-log.js"
-file = open(fileName, "w", encoding = "utf-8")
-
-fileName2 = "allCreatedPassword-logs.txt"
-file2 = open(fileName2, "a", encoding = "utf-8")
-
 def ClearLogs():
  with open(fileName, "w") and open(fileName2, "w") as i:
   print("'%(fileOne)s' ve '%(fileTwo)s' Temizlendi!" % { "fileOne": fileName, "fileTwo": fileName2})
 
 
 def readCreatedPasswords(nameOne, nameTwo):
-  with open(nameOne) as dataFile:
-   print(dataFile.read())
+  with open(nameOne) and open(nameTwo) as datas:
+   print(datas.read())
 
 
 # İçerikleri oku
@@ -53,7 +53,7 @@ else:
  keyLength = int(input("Uzunluk Sayısını Giriniz: "))
 
  if(keyLength >= 100):
-  print("Sistem Hatası, Max 100 uzunlukta şifre oluşturabilirsiniz.")
+  print("[Uygulama Hatası] Max 100 uzunlukta şifre oluşturabilirsiniz.")
 
  today = datetime.today()
  time = """{ "Year": "%(year)s", "Month": "%(month)s", "Day": "%(day)s", "Hour": "%(hour)s:%(minute)s:%(second)s" }""" % { "year": today.year, "month": today.month, "day": today.day, "hour": today.hour, "minute": today.minute, "second": today.second } 
@@ -86,23 +86,25 @@ else:
  
 "Password": "%(gen)s",
 "Name": '%(nm)s',
+"Açıklama": '%(d)s',
 "Durum": '%(sts)s', 
 "Tarih": %(trh)s
 
 };
 
-module.exports = i; """ % { "sts": security, "nm": userName, "trh": time, "gen": passw + i})
+module.exports = i; """ % { "d": desc, "sts": security, "nm": userName, "trh": time, "gen": passw + i})
 
   file2.write(
  """
 |-----------------------|
 | Password: '%(gen)s'
 | Name: '%(nm)s'
+| Description: '%(d)s'
 | Durum: '%(sts)s'
 | Tarih: %(trh)s
 |-----------------------|
- """ % { "sts": security, "nm": userName, "trh": time, "gen": passw + i})
-  print("Şifreniz: %(gen)s \n\nSistem: Şifreniz '%(name)s' ve '%(name2)s' dosyasına kaydedildi!" % { "name2": fileName2, "name": fileName, "gen": data})
+ """ % { "d": desc, "sts": security, "nm": userName, "trh": time, "gen": passw + i})
+  print("Şifreniz: %(gen)s \n\n[Uygulama] Şifreniz '%(name)s' ve '%(name2)s' dosyasına kaydedildi!\n" % { "name2": fileName2, "name": fileName, "gen": data})
   file.close()
   file2.close()
 
@@ -121,13 +123,14 @@ module.exports = i; """ % { "sts": security, "nm": userName, "trh": time, "gen":
   file.write("""const i = {
 
  "Password": "%(gen)s", 
- "Name": "%(nm)s", 
+ "Name": "%(nm)s",
+ "Açıklama": '%(d)s',
  "Durum": "%(sts)s", 
  "Tarih": %(trh)s
 
 };
 
-module.exports = i;""" % { "sts": security, "nm": userName, "trh": time, "gen": passw})
+module.exports = i;""" % { "d": desc, "sts": security, "nm": userName, "trh": time, "gen": passw})
 
   file2.write(
  """
@@ -135,11 +138,13 @@ module.exports = i;""" % { "sts": security, "nm": userName, "trh": time, "gen": 
 | Password: '%(gen)s'
 | Name: '%(nm)s'
 | Durum: '%(sts)s'
+| Description: '%(d)s'
 | Tarih: %(trh)s
 |---------------------|
- """ % { "sts": security, "nm": userName, "trh": time, "gen": passw})
-  print("Şifreniz: %(gen)s \n\nSistem: Şifreniz '%(name)s' ve '%(name2)s' dosyasına kaydedildi!" % { "name2": fileName2, "name": fileName, "gen": data})
+ """ % { "d": desc, "sts": security, "nm": userName, "trh": time, "gen": passw})
+  print("Şifreniz: %(gen)s \n\n[Uygulama] Şifreniz '%(name)s' ve '%(name2)s' dosyasına kaydedildi!\n" % { "name2": fileName2, "name": fileName, "gen": data})
   file.close()
+  file2.close()
  
 
  if(val == 1): 

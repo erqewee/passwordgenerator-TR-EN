@@ -21,7 +21,7 @@
 
 # İletişim
 
-- [! EndermanX#7788](https://www.discord.com/users/744835491643260988)
+- [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
 - [Voxen Community](https://discord.gg/uF8TZY4MaR)
 
 
@@ -48,5 +48,5 @@
 
 # Communication
 
-- [! EndermanX#7788](https://www.discord.com/users/744835491643260988)
+- [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
 - [Voxen Community](https://discord.gg/uF8TZY4MaR) 

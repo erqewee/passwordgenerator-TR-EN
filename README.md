@@ -7,7 +7,7 @@
 
 # Gerekli
 
-- [Python](https://www.python.org/downloads): Sürüm 3.7 veya üstü (önerilen 3.10.3)
+- [Python](https://www.python.org/downloads): Sürüm 3.7 veya üstü (önerilen 3.10.4)
 
 # Nasıl Kullanılır?
 
@@ -34,7 +34,7 @@
 
 # Necessary
 
-- [Python](https://www.python.org/downloads): Version 3.7 or higher (recommended 3.10.3)
+- [Python](https://www.python.org/downloads): Version 3.7 or higher (recommended 3.10.4)
 
 # How to use?
 

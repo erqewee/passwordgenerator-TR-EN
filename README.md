@@ -25,7 +25,8 @@
 - [Voxen Community](https://discord.gg/uF8TZY4MaR)
 
 
-
+<br>
+<br>
 # Language: English
 
 # Password Generator

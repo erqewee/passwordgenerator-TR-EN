@@ -1,8 +1,8 @@
 # IMPORT MODULES
 from random import *;
 from string import *;
-from datetime import datetime
-
+from datetime import datetime;
+from names import get_full_name;
 # IMPORT MODULES
 
 # IMPORT METHODS
@@ -13,6 +13,7 @@ from methods.ReadCreatedPasswords import *; # read passwords
 from methods.Error import *; # send private custom Error message
 from methods.Application import *; # Application messages
 from methods.Exit import *; # Stop program 
+from methods.CreateNewUser import *; # Create random name 
 # IMPORT METHODS
 
 
@@ -27,6 +28,10 @@ file = open(fileName, "w", encoding = "UTF-8")
 # File Two
 fileName2 = "allCreatedPassword-logs.txt"
 file2 = open(fileName2, "a", encoding = "UTF-8")
+
+# Random username file
+userLog = "allCreatedUsers-log.txt"
+userFile = open(userLog, "a", encoding = "UTF-8")
 
 # Get user, User Name
 userName = input("Adınızı giriniz: ")
@@ -80,17 +85,19 @@ try:
   val = int(input("""
 + Yapılacak işlemi giriniz.
 
-|-------------------------|
-| 1 - Oluşturulana Ekle   |
-|-------------------------|
-| 2 - Yeni Şifre Oluştur  |
-|-------------------------|
-| 3 - Şifreleri Oku       |
-|-------------------------|
-| 0 - Şifre Geçmişini Sil |
-|-------------------------|
-| 9 - Uygulamayı Durdur   |
-|-------------------------|
+|----------------------------|
+| 1 - Oluşturulana Ekle      |
+|----------------------------|
+| 2 - Yeni Şifre Oluştur     |
+|----------------------------|
+| 3 - Şifreleri Oku          |
+|----------------------------|
+| 4 - Kullanıcı Adı Oluştur  |
+|----------------------------|
+| 0 - Şifre Geçmişini Sil    |
+|----------------------------|
+| 9 - Uygulamayı Durdur      |
+|----------------------------|
 
 > İşlem: """))
  
@@ -120,6 +127,9 @@ try:
 
   if(val == 3):
    ReadAll(Application, fileName2, fileName);
+  
+  elif(val == 4):
+   NewUser(Application, get_full_name, Error, userLog, userFile)
 
   elif(val == 0): 
    ClearCache(Application, fileName, fileName2);

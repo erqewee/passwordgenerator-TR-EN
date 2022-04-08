@@ -22,11 +22,11 @@
 # İletişim
 
 - [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
-- [Voxen Community](https://discord.gg/uF8TZY4MaR)
+- [Sky Legend](https://discord.gg/ZwhgJvXqm9)
 
 
-<br>
-<br>
+
+
 # Language: English
 
 # Password Generator
@@ -50,4 +50,4 @@
 # Communication
 
 - [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
-- [Voxen Community](https://discord.gg/uF8TZY4MaR) 
+- [Sky Legend](https://discord.gg/ZwhgJvXqm9) 

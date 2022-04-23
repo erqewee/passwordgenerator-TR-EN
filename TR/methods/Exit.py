@@ -1,4 +1,4 @@
-def Stop(Application):
- Application("Başarıyla kapatıldı!")
+def Stop(App):
+ App("Başarıyla kapatıldı!")
  
  exit();

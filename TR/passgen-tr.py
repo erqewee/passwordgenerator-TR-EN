@@ -6,10 +6,11 @@ from names import get_full_name;
 # IMPORT MODULES
 
 # IMPORT METHODS
-from methods.ClearCache import *; # Clear logs
+from methods.ClearPasswordCache import *; # Clear password logs
+from methods.ClearUsernameCache import *; # Clear username logs
 from methods.CreateNewPassword import *; # create a new password
 from methods.OverwriteCreatedPassword import *; # write to created password
-from methods.ReadCreatedPasswords import *; # read passwords
+from methods.ReadPasswords import *; # read passwords
 from methods.Error import *; # send private custom Error message
 from methods.Application import *; # Application messages
 from methods.Exit import *; # Stop program 
@@ -68,12 +69,12 @@ elif(today.month == 9):
   month += "0%(i)s" % { "i": today.month }
 
 else:
-  print(today.month)
+  month = today.month
   
 time = """{ "": "%(day)s.%(month)s.%(year)s | %(hour)s:%(minute)s:%(second)s" }""" % { "year": today.year, "month": month, "day": today.day, "hour": today.hour, "minute": today.minute, "second": today.second }
 
 if(userName == ""):
- userName += "Girilmedi!"
+ userName = "Girilmedi!"
 
 else:
  userName = userName;
@@ -85,19 +86,23 @@ try:
   val = int(input("""
 + Yapılacak işlemi giriniz.
 
-|----------------------------|
-| 1 - Oluşturulana Ekle      |
-|----------------------------|
-| 2 - Yeni Şifre Oluştur     |
-|----------------------------|
-| 3 - Şifreleri Oku          |
-|----------------------------|
-| 4 - Kullanıcı Adı Oluştur  |
-|----------------------------|
-| 0 - Şifre Geçmişini Sil    |
-|----------------------------|
-| 9 - Uygulamayı Durdur      |
-|----------------------------|
+|-----------------------------------|
+| 1 - Oluşturulana Ekle             |
+|-----------------------------------|
+| 2 - Yeni Şifre Oluştur            |
+|-----------------------------------|
+| 3 - Şifreleri Oku                 |
+|-----------------------------------|
+| 4 - Kullanıcı Adı Oluştur         |
+|-----------------------------------|
+| 5 - Kullanıcı Geçmişini Sil       |
+|-----------------------------------|
+| 0 - Şifre Geçmişini Sil           |
+|-----------------------------------|
+| 9 - Uygulamayı Durdur             |
+|-----------------------------------|
+| 10 - Destek                       |
+|-----------------------------------|
 
 > İşlem: """))
  
@@ -105,13 +110,13 @@ try:
    desc = input("Bu şifreyi ne için kullanacaksınız: ")
    length = int(input("Şifre uzunluğunu giriniz: "))
 
-   if(length <= 8):
+   if(length <= 16):
     security += "Güvenli Değil!"
 
    elif(length > 8):
     security += "Güvenli!"
 
-   OverwriteCreated(sample, length, desc, security, userName, file, file2, fileName, fileName2, time, allChars, Error, Application);
+   OverwriteCreated(sample, length, desc, security, userName, file, file2, fileName, fileName2, time, allChars);
 
   elif(val == 2):
    desc = input("Bu şifreyi ne için kullanacaksınız: ")
@@ -123,19 +128,25 @@ try:
    elif(length > 8):
     security += "Güvenli!"
    
-   CreateNew(sample, length, desc, security, userName, file, file2, fileName, fileName2, time, allChars, Error, Application);
+   NewPassword(sample, length, desc, security, userName, file, file2, fileName, fileName2, time, allChars);
 
   if(val == 3):
-   ReadAll(Application, fileName2, fileName);
+   ReadAll(fileName2, fileName);
   
   elif(val == 4):
-   NewUser(Application, get_full_name, Error, userLog, userFile)
+   NewUser(get_full_name, userLog, userFile)
+  
+  elif(val == 5):
+   ClearUsernameCache(userLog);
+  
+  elif(val == 10):
+    App("Yardıma mı ihtiyacınız var? Bu sunucuya gelin ve iletişime geçin! URL: https://discord.gg/ZwhgJvXqm9")
 
   elif(val == 0): 
-   ClearCache(Application, fileName, fileName2);
+   ClearPasswordCache(fileName, fileName2);
   
   elif(val == 9):
-   Stop(Application);
+   Stop(App);
 
 except Exception as message:
   Error(message)

@@ -1,4 +1,7 @@
-def NewUser(Application, randomName, Error, file, log):
+from methods.Error import Error;
+from methods.Application import App;
+
+def NewUser(randomName, file, log):
  i = input("İsmin Cinsiyetini Seçiniz (Male [Erkek] | Female [Kız]): ")
 
  data = [];
@@ -9,7 +12,7 @@ def NewUser(Application, randomName, Error, file, log):
   boy = randomName(gender = "Male");
   data.append(boy)
 
-  Application(
+  App(
   """
   Kullanıcı Adı: %(name)s
 
@@ -31,7 +34,7 @@ def NewUser(Application, randomName, Error, file, log):
   girl = randomName(gender = "Female");
   data.append(girl)
 
-  Application(
+  App(
   """
   Kullanıcı Adı: %(name)s
 
@@ -50,4 +53,4 @@ def NewUser(Application, randomName, Error, file, log):
 
 
  else:
-  Application(Error("Böyle cinsiyet bulunamadı!"))
+  App(Error("Böyle cinsiyet bulunamadı!"))

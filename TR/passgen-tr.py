@@ -19,8 +19,8 @@ from methods.CreateNewUser import *; # Create random name
 
 
 # GENERATOR CODES
-allChars = (ascii_letters + ascii_lowercase + ascii_uppercase + punctuation + digits)
-onlyLetters = ascii_letters
+allChars = (ascii_letters + ascii_lowercase + ascii_uppercase + punctuation + digits) # all letters
+onlyLetters = ascii_letters # only letters
 
 # File One
 fileName = "lastCreatedPassword-log.js"

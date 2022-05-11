@@ -21,8 +21,7 @@
 
 # İletişim
 
-- [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
-- [Sky Legend](https://discord.gg/ZwhgJvXqm9)
+- [! Ἕʀἔᾗ 么ˢᶤʳᶤᵘˢ ȣᶜᵉʳˡʸ#7788](https://www.discord.com/users/744835491643260988)
 
 
 
@@ -49,5 +48,4 @@
 
 # Communication
 
-- [! EreniXqw#7788](https://www.discord.com/users/744835491643260988)
-- [Sky Legend](https://discord.gg/ZwhgJvXqm9) 
+- [! Ἕʀἔᾗ 么ˢᶤʳᶤᵘˢ ȣᶜᵉʳˡʸ#7788](https://www.discord.com/users/744835491643260988)

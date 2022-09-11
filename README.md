@@ -7,7 +7,7 @@
 
 # Gerekli
 
-- [Python](https://www.python.org/downloads): Sürüm 3.7 veya üstü (önerilen 3.10.4)
+- [Python](https://www.python.org/downloads): Sürüm 3.7 veya üstü (önerilen 3.10.5)
 
 # Nasıl Kullanılır?
 

@@ -1,3 +1,4 @@
+> This project has been moved to [GitLab](https://gitlab.com/erqewee/password-generator/-/tree/master)
 
 # Language: Turkish
 
